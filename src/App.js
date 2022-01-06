@@ -3,10 +3,18 @@ import data from "./data";
 import List from "./List";
 
 const App = () => {
+	const [people, setPeople] = useState(data);
+
 	return (
-		<div>
-			<h1>Hello Wolrd</h1>
-		</div>
+		<main>
+			<section className="container">
+				<h3>{people.length} birthdays today</h3>
+				<List people={people} />
+				<button type="button" onClick={() => setPeople([])}>
+					Clear all
+				</button>
+			</section>
+		</main>
 	);
 };
 
